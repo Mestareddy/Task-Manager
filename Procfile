@@ -1,1 +1,1 @@
-web: node browser-app.js
+web: node app.js
