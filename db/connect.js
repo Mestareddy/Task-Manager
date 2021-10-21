@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
 
 const connectDB = (url) => {
-    return mongoose
-        .connect(url, {
-            useUnifiedTopology: true,
-            useNewUrlParser: true
-        })
+  return mongoose.connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
 }
 
-module.exports = connectDB;
+module.exports = connectDB
