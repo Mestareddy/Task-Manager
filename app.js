@@ -5,6 +5,7 @@ const connectDB = require('./db/connect');
 require('dotenv').config();
 const notFound = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
+const cool = require('cool-ascii-faces');
 
 // middleware
 
@@ -14,6 +15,7 @@ app.use(express.json());
 // routes
 
 app.use('/api/v1/tasks', tasks);
+app.get('/cool', (req, res) => res.send(cool()))
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
